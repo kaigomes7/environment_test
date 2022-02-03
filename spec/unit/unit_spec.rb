@@ -25,12 +25,6 @@ RSpec.describe Book, type: :model do
     expect(subject).not_to be_valid
   end
 
-  # Anything non-numeric becomes 0.0 therfore it is still valid
-  # it 'is not valid with a string as price' do
-  #   subject.price = "Nine ninety-nine"
-  #   expect(subject).not_to be_valid
-  # end
-
   it 'is not valid without a date' do
     subject.date_published = nil
     expect(subject).not_to be_valid

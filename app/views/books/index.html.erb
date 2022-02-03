@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Books</h1>
-<h1>Library</h1>
 
 <table>
   <thead>
@@ -10,6 +9,7 @@
       <th>Author</th>
       <th>Price</th>
       <th>Date Published</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -20,9 +20,9 @@
         <td><%= book.author %></td>
         <td>$<%= book.price %></td>
         <td><%= book.date_published %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', book %> | 
+        <%= link_to 'Edit', edit_book_path(book) %> | 
+        <%= link_to 'Delete', delete_book_path(book), :class => 'action delete' %></td>
       </tr>
     <% end %>
   </tbody>
