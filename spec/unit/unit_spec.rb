@@ -14,4 +14,24 @@ RSpec.describe Book, type: :model do
     subject.title = nil
     expect(subject).not_to be_valid
   end
+
+  it 'is not valid without an author' do
+    subject.author = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a price' do
+    subject.price = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a date' do
+    subject.date_published = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid with an invalid date format' do
+    subject.date_published = '20-20-20'
+    expect(subject).not_to be_valid
+  end
 end
