@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(version: 2022_02_07_231106) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users_books", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "book_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "user_books", "books"
   add_foreign_key "user_books", "users"
 end
